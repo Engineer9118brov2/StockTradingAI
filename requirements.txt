@@ -21,9 +21,22 @@ matplotlib>=3.5.0
 # Model Serialization
 joblib>=1.2.0
 
+# Technical Indicators
+pandas-ta>=0.3.14b0
+
+# Live Trading (Alpaca)
+alpaca-py>=0.28.0
+
+# Environment Variables
+python-dotenv>=1.0.0
+
+# Scheduling
+schedule>=1.2.0
+
 # Testing
 pytest>=7.2.0
 pytest-cov>=4.0.0
+pytest-mock>=3.12.0
 
 # Development
 black>=23.0.0

@@ -23,10 +23,24 @@ STOP_LOSS_PCT = 0.05
 ML_TRAIN_TEST_SPLIT = 0.2
 ML_RANDOM_STATE = 42
 ML_PREDICTION_THRESHOLD = 0.5
+ML_MODEL_TYPE = "random_forest"  # Options: logistic_regression, random_forest
+ML_N_ESTIMATORS = 100
+ML_MAX_DEPTH = 10
+
+# Alpaca Live Trading Configuration
+ALPACA_ENABLED = false  # Set to true to enable live trading
+ALPACA_PAPER_TRADING = true  # Set to false for real trading (use with extreme caution!)
+ALPACA_BASE_URL = "https://paper-api.alpaca.markets"
+
+# Risk Management
+TRADE_RISK_PERCENT = 0.01  # Max 1% of portfolio per trade
+DAILY_LOSS_LIMIT = -0.02  # Max -2% daily loss before halting
+MAX_POSITION_SIZE = 0.05  # Max 5% of portfolio per position
 
 # Backtesting Parameters
 RISK_FREE_RATE = 0.02  # 2% annual
 TRADING_DAYS_PER_YEAR = 252
+BENCHMARK_ENABLED = true  # Include buy-and-hold benchmark in backtests
 
 # Data Storage
 DATA_DIR = "data"
