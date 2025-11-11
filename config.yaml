@@ -1,0 +1,38 @@
+"""
+Polygon API configuration and stock trading parameters.
+
+This file contains configuration settings for the StockTradingAI bot.
+Sensitive values (like API keys) should be set via environment variables.
+"""
+
+# Polygon API Configuration
+POLYGON_API_KEY = None  # Set via POLYGON_API_KEY environment variable
+
+# Stock Trading Parameters
+DEFAULT_TICKER = "AAPL"
+DEFAULT_DAYS = 365
+INITIAL_CASH = 10000
+
+# SMA Crossover Strategy Parameters
+SMA_SHORT_WINDOW = 50
+SMA_LONG_WINDOW = 200
+TRADE_SIZE = 10
+STOP_LOSS_PCT = 0.05
+
+# ML Strategy Parameters
+ML_TRAIN_TEST_SPLIT = 0.2
+ML_RANDOM_STATE = 42
+ML_PREDICTION_THRESHOLD = 0.5
+
+# Backtesting Parameters
+RISK_FREE_RATE = 0.02  # 2% annual
+TRADING_DAYS_PER_YEAR = 252
+
+# Data Storage
+DATA_DIR = "data"
+MODELS_DIR = "models"
+PLOTS_DIR = "examples"
+
+# Logging
+LOG_LEVEL = "INFO"
+LOG_FORMAT = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
