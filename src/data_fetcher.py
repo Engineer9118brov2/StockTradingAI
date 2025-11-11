@@ -75,6 +75,14 @@ class DataFetcher:
         try:
             logger.info(f"Fetching {days} days of data for {ticker}...")
             
+            # Calculate date range if not provided
+            from datetime import datetime, timedelta
+            if end_date is None:
+                end_date = datetime.now().strftime("%Y-%m-%d")
+            if start_date is None:
+                start_dt = datetime.strptime(end_date, "%Y-%m-%d") - timedelta(days=days)
+                start_date = start_dt.strftime("%Y-%m-%d")
+            
             # Fetch aggregates (daily bars) from Polygon API
             aggs = []
             for agg in self.client.list_aggs(

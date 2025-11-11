@@ -43,8 +43,13 @@ def fetch_command(args) -> pd.DataFrame:
         # Preprocess
         df_processed = DataFetcher.preprocess_data(df)
         
+        # Save preprocessed data to CSV
+        csv_path = f"data/{args.ticker}_data.csv"
+        df_processed.to_csv(csv_path, index=False)
+        logger.info(f"Preprocessed data saved to {csv_path}")
+        
         logger.info(f"Data shape: {df_processed.shape}")
-        logger.info(f"Columns: {list(df_processed.columns)}")
+        logger.info(f"Number of features: {len(df_processed.columns)}")
         
         return df_processed
     

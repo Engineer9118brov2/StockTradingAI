@@ -47,6 +47,7 @@ class MLPredictor:
         self.feature_cols = None
         self.model_path = model_path
         self.scaler_path = model_path.replace(".pkl", "_scaler.pkl")
+        self.features_path = model_path.replace(".pkl", "_features.pkl")
     
     def train_model(
         self,
@@ -118,6 +119,7 @@ class MLPredictor:
         os.makedirs(os.path.dirname(self.model_path) or ".", exist_ok=True)
         joblib.dump(self.model, self.model_path)
         joblib.dump(self.scaler, self.scaler_path)
+        joblib.dump(self.feature_cols, self.features_path)
         logger.info(f"Model saved to {self.model_path}")
         
         return {
@@ -137,6 +139,7 @@ class MLPredictor:
         
         self.model = joblib.load(self.model_path)
         self.scaler = joblib.load(self.scaler_path)
+        self.feature_cols = joblib.load(self.features_path)
         logger.info(f"Model loaded from {self.model_path}")
     
     def predict(
