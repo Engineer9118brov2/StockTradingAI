@@ -101,7 +101,7 @@ class DataFetcher:
             # Convert to DataFrame
             data = pd.DataFrame([
                 {
-                    "date": pd.to_datetime(agg.timestamp),
+                    "date": pd.to_datetime(agg.timestamp, unit='ms'),
                     "open": agg.open,
                     "high": agg.high,
                     "low": agg.low,
